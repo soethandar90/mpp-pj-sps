@@ -1,5 +1,6 @@
 git clone <url>
 git branch -a
 git checkout <branchname>
+git pull
 git commit -m "message"
 git push --all
