@@ -8,7 +8,7 @@ import librarysystem.dataaccess.DataAccessFacade;
 import librarysystem.domain.Book;
 import librarysystem.domain.exception.BookNotFoundException;
 
-public class BookCopyController implements BookCopyUseCase{
+public class BookCopyController implements BookCopyUseCase {
 	BookCopyController() {
 	}
 
@@ -16,22 +16,21 @@ public class BookCopyController implements BookCopyUseCase{
 	public Book addBookCopy(Book book, int noOfCopies) throws BookNotFoundException {
 		DataAccess da = new DataAccessFacade();
 		HashMap<String, Book> hmBooks = da.readBooksMap();
-		
+
 		if (hmBooks.containsKey(book.getIsbn())) {
 			Book bookFromDB = hmBooks.get(book.getIsbn());
-			
-			for(int i=0; i<noOfCopies; i++) {
+
+			for (int i = 0; i < noOfCopies; i++) {
 				bookFromDB.addCopy();
 			}
-			
+
 			hmBooks.put(bookFromDB.getIsbn(), bookFromDB);
 			da.updateBookHM(hmBooks);
 			return bookFromDB;
 		} else {
 			throw new BookNotFoundException(book.getIsbn());
 		}
-		
+
 	}
 
-	
 }

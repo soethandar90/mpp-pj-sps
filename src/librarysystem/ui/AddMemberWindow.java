@@ -26,14 +26,14 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 	private static final long serialVersionUID = 1L;
 	public static final AddMemberWindow INSTANCE = new AddMemberWindow();
 	AddLibraryMemberUseCase addLibraryMemberUseCase = ControllerFactory.createAddLibraryMemberUseCase();
-	
+
 	private boolean isInitialized = false;
-	
+
 	private JPanel mainPanel = new JPanel();
 	private JPanel topPanel = new JPanel();
 	private JPanel outerMiddel = new JPanel();
 	private JPanel lowerPanel;
-	
+
 	private JTextField txtMemberId;
 	private JTextField txtFirstName;
 	private JTextField txtLastName;
@@ -42,7 +42,7 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 	private JTextField txtCity;
 	private JTextField txtZipCode;
 	private JTextField txtState;
-	
+
 	private JLabel lblMemberId;
 	private JLabel lblFirstName;
 	private JLabel lblLastName;
@@ -51,9 +51,9 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 	private JLabel lblCity;
 	private JLabel lblZipCode;
 	private JLabel lblState;
-	
-	private AddMemberWindow() {}
-	
+
+	private AddMemberWindow() {
+	}
 
 	@Override
 	public void init() {
@@ -62,20 +62,20 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		this.defineTopPanel();
 		this.defineOuterMiddle();
 		this.defineLowerPanel();
-		
+
 		this.mainPanel.add(this.topPanel, BorderLayout.NORTH);
 		this.mainPanel.add(this.outerMiddel, BorderLayout.CENTER);
 		this.mainPanel.add(this.lowerPanel, BorderLayout.SOUTH);
 		getContentPane().add(mainPanel);
 		isInitialized = true;
-		
+
 	}
 
 	@Override
 	public boolean isInitialized() {
 		return isInitialized;
 	}
-	
+
 	private void initializeComponent() {
 		txtMemberId = new JTextField(20);
 		txtFirstName = new JTextField(20);
@@ -85,7 +85,7 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		txtCity = new JTextField(20);
 		txtZipCode = new JTextField(20);
 		txtState = new JTextField(20);
-		
+
 		lblMemberId = new JLabel("Member ID");
 		lblFirstName = new JLabel("First Name");
 		lblLastName = new JLabel("Last Name");
@@ -100,7 +100,7 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 	public void isInitialized(boolean val) {
 		isInitialized = val;
 	}
-	
+
 	public void defineTopPanel() {
 		this.topPanel = new JPanel();
 		JLabel addMemberLabel = new JLabel("Add Library Member");
@@ -108,75 +108,75 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		this.topPanel.setLayout(new FlowLayout(0));
 		this.topPanel.add(addMemberLabel);
 	}
-	
+
 	public void defineOuterMiddle() {
 		this.outerMiddel = new JPanel();
 		this.outerMiddel.setLayout(new BorderLayout());
-		
+
 		JPanel middlePanel = new JPanel();
 		FlowLayout fl = new FlowLayout(1, 25, 25);
-		
+
 		middlePanel.setLayout(fl);
-		
+
 		JPanel leftPanel = new JPanel();
 		JPanel rightPanel = new JPanel();
-		
+
 		leftPanel.setLayout(new BoxLayout(leftPanel, 1));
 		rightPanel.setLayout(new BoxLayout(rightPanel, 1));
-		
+
 		leftPanel.add(lblMemberId);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblFirstName);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblLastName);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblPhoneNumber);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblStreet);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblCity);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblZipCode);
 		leftPanel.add(Box.createRigidArea(new Dimension(0, 12)));
-		
+
 		leftPanel.add(lblState);
-		
+
 		rightPanel.add(txtMemberId);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtFirstName);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtLastName);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtPhoneNumber);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtStreet);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtCity);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtZipCode);
 		rightPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-		
+
 		rightPanel.add(txtState);
-		
+
 		middlePanel.add(leftPanel);
 		middlePanel.add(rightPanel);
-		
+
 		this.outerMiddel.add(middlePanel, BorderLayout.NORTH);
-		
+
 	}
-	
+
 	private void attachAddMemberButtonListener(JButton btn) {
 		btn.addActionListener((evt) -> {
 			if (validateInput()) {
@@ -190,13 +190,14 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 			}
 		});
 	}
-	
-	private LibraryMember bindObject () {
+
+	private LibraryMember bindObject() {
 		Address address = new Address(txtStreet.getText(), txtCity.getText(), txtState.getText(), txtZipCode.getText());
-		LibraryMember member = new LibraryMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(), txtPhoneNumber.getText(), address);
+		LibraryMember member = new LibraryMember(txtMemberId.getText(), txtFirstName.getText(), txtLastName.getText(),
+				txtPhoneNumber.getText(), address);
 		return member;
 	}
-	
+
 	private void clearInput() {
 		txtStreet.setText("");
 		txtCity.setText("");
@@ -207,54 +208,56 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		txtLastName.setText("");
 		txtPhoneNumber.setText("");
 	}
-	
+
 	private boolean validateInput() {
 		if (txtMemberId.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Invalid Member Id");
 			return false;
 		}
-		
+
 		if (txtFirstName.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Invalid First Name");
 			return false;
 		}
-		
+
 		if (txtLastName.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Invalid Last Name");
 			return false;
 		}
-		
+
 		if (txtPhoneNumber.getText().isEmpty()) {
 			JOptionPane.showMessageDialog(this, "Invalid Phone Number");
 			return false;
 		}
 
-		
 		return true;
 	}
-	
+
 	public void defineLowerPanel() {
 		JButton backToMainButn = new JButton("<= Back to Main");
 		backToMainButn.addActionListener(new BackToMainListener());
 		lowerPanel = new JPanel();
-		lowerPanel.setLayout(new FlowLayout(FlowLayout.LEFT));;
+		lowerPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+		;
 		lowerPanel.add(backToMainButn);
-		
+
 		JButton btnAddMember = new JButton("Add Member");
 		attachAddMemberButtonListener(btnAddMember);
 		lowerPanel.add(btnAddMember);
-		
+
 		JButton btnClear = new JButton("Cancel");
-		btnClear.addActionListener(e -> { clearInput();});
+		btnClear.addActionListener(e -> {
+			clearInput();
+		});
 		lowerPanel.add(btnClear);
-		
+
 //		JPanel addBookButtonPanel = new JPanel();
 //		addBookButtonPanel.setLayout(new FlowLayout(1));
 //		addBookButtonPanel.add(btnAddMember);
-		//this.outerMiddel.add(addBookButtonPanel, BorderLayout.CENTER);
-		
+		// this.outerMiddel.add(addBookButtonPanel, BorderLayout.CENTER);
+
 	}
-	
+
 	class BackToMainListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent evt) {
@@ -262,7 +265,5 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 			LibrarySystem.INSTANCE.setVisible(true);
 		}
 	}
-	
-	
 
 }

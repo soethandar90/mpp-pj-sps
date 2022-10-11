@@ -71,7 +71,7 @@ public class LoginWindow extends JFrame implements LibWindow {
 		this.username = new JTextField(10);
 		this.password = new JPasswordField(10);
 	}
-	
+
 	public void init() {
 		mainPanel = new JPanel();
 		defineUpperHalf();
@@ -196,9 +196,7 @@ public class LoginWindow extends JFrame implements LibWindow {
 			backToMain();
 		});
 	}
-	
-	
- 	
+
 	private void backToMain() {
 		this.clear();
 		LibrarySystem.hideAllWindows();
@@ -210,17 +208,17 @@ public class LoginWindow extends JFrame implements LibWindow {
 			doLogIn();
 		});
 	}
-	
+
 	private void doLogIn() {
 		String user = this.username.getText();
 		String pass = new String(password.getText());
 		try {
 			Auth auth = logInUseCase.login(user, pass);
 			LibrarySystem.INSTANCE.doAuthentication(auth);
-			//JOptionPane.showMessageDialog(this, "Successful Login");
+			// JOptionPane.showMessageDialog(this, "Successful Login");
 			backToMain();
 		} catch (LoginException e) {
-			e.printStackTrace();	
+			e.printStackTrace();
 			JOptionPane.showMessageDialog(this, "Login Failed");
 		}
 	}

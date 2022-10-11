@@ -15,10 +15,11 @@ public class GetAuthorController implements GetAuthorUseCase {
 
 	@Override
 	public List<Author> getAllAuthors() {
-		
+
 		DataAccess da = new DataAccessFacade();
-		HashMap<String,Author> authors = da.readAuthorMap();
-		if (authors==null) return null;
+		HashMap<String, Author> authors = da.readAuthorMap();
+		if (authors == null)
+			return null;
 		return new ArrayList<>(authors.values());
 	}
 }

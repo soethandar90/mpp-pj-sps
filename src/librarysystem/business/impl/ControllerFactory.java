@@ -13,6 +13,7 @@ import librarysystem.business.usecase.SearchBookUseCase;
 public class ControllerFactory {
 	private ControllerFactory() {
 	}
+
 	public static SearchBookUseCase createSearchBookUseCase() {
 		SearchBookUseCase useCase = new BookController();
 		return useCase;
@@ -23,12 +24,11 @@ public class ControllerFactory {
 		return useCase;
 	}
 
-	//Added by WinWin
+	// Added by WinWin
 	public static GetAuthorUseCase createGetAuthorController() {
 		GetAuthorUseCase useCase = new GetAuthorController();
 		return useCase;
 	}
-	
 
 	public static BookCopyUseCase createBookCopyUseCase() {
 		BookCopyUseCase useCase = new BookCopyController();
@@ -39,7 +39,7 @@ public class ControllerFactory {
 		CheckOutBookUseCase useCase = new CheckOutBookController();
 		return useCase;
 	}
-	
+
 	public static PrintCheckOutRecordUseCase createPrintCheckOutBookUseCase() {
 		PrintCheckOutRecordUseCase useCase = new CheckOutBookController();
 		return useCase;
