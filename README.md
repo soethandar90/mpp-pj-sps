@@ -17,8 +17,9 @@ This is the library system implementation for MPP Project
  from the data store. If this user exists it opens the next page, otherwise it shows error.
  
  User can be Librarian, Admin or Both. 
- If you want to be admin you should submit with ID: 102, and password: abc.
- If you want to be librarian you should submit with ID: 101, and password xyz.
+ For admin, you should submit with ID: Phyo, and password: phyo.
+ For librarian, you should submit with ID: Sandhya, and password sandhya.
+ For superuser, please use Username: Soe and password: soe.
  
  If there is no default data, you can run the TestData.java under librarysystem.dataaccess package. This will create default data for this application.
  
