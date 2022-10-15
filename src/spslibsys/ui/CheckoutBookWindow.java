@@ -116,7 +116,7 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
         
     	JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(0, 0, 920, 633);
-		lblNewLabel.setIcon(new ImageIcon(new javax.swing.ImageIcon(MainLogin.class.getResource("/librarysystem/library.png")).getImage().getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH)));
+		lblNewLabel.setIcon(new ImageIcon(new javax.swing.ImageIcon(MainLogin.class.getResource("/spslibsys/library.png")).getImage().getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH)));
 		getContentPane().add(lblNewLabel);
 
 	}
