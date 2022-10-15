@@ -60,7 +60,7 @@ public class TestData {
 	}
 
 	public void checkOutRecordData() {
-		@SuppressWarnings("serial")
+//		@SuppressWarnings("serial")
 		LibraryMember libraryMember = new LibraryMember("1001", "Andy", "Rogers", "641-223-2211", addresses.get(4));
 
 		CheckOutRecordEntry entry = new CheckOutRecordEntry(LocalDate.now(), LocalDate.now(),
