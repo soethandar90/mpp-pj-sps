@@ -25,8 +25,7 @@ public class LibrarySystem extends JFrame implements LibWindow {
 	JPanel mainPanel;
 	JMenuBar menuBar;
 	JMenu options;
-	JMenuItem login, addLibraryMember, checkOutBook, addBookCopy, addBook,
-			printCheckOutRecord;
+	JMenuItem login, addLibraryMember, checkOutBook, addBookCopy, addBook, printCheckOutRecord;
 	String pathToImage;
 	private boolean isInitialized = false;
 

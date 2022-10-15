@@ -20,5 +20,5 @@
     in a checkout record page, the system searches for ID and shows the record. If librarian prints this record it prints
     in a console.
     
-    github url: https://github.com/winongit/mpp-library-project
+    github url: https://github.com/soethandar90/mpp-pj-sps
     

@@ -66,12 +66,10 @@ public class DataAccessFacade implements DataAccess {
 		books.put(book.getIsbn(), book);
 		saveToStorage(StorageType.BOOKS, books);
 	}
-	
+
 	public void updateBookHM(HashMap<String, Book> hmBooks) {
 		saveToStorage(StorageType.BOOKS, hmBooks);
 	}
-	
-	
 
 	///// load methods - these place test data into the storage area
 	///// - used just once at startup
@@ -93,24 +91,23 @@ public class DataAccessFacade implements DataAccess {
 		memberList.forEach(member -> members.put(member.getMemberId(), member));
 		saveToStorage(StorageType.MEMBERS, members);
 	}
-	
+
 	static void loadAuthorMap(List<Author> authorList) {
 		HashMap<String, Author> authors = new HashMap<String, Author>();
-		authorList.forEach(author -> authors.put(author.getAuthorId(),author));
+		authorList.forEach(author -> authors.put(author.getAuthorId(), author));
 		saveToStorage(StorageType.AUTHORS, authors);
 	}
-	
+
 	static void loadCheckOutRecordMap(CheckOutRecord checkOutRecord) {
-		HashMap<String, CheckOutRecord> hmCheckOutRecord = new HashMap<String, CheckOutRecord> ();
+		HashMap<String, CheckOutRecord> hmCheckOutRecord = new HashMap<String, CheckOutRecord>();
 		hmCheckOutRecord.put(checkOutRecord.getMember().getMemberId(), checkOutRecord);
-		
+
 		List<CheckOutRecord> checkOutRecords = new ArrayList<CheckOutRecord>();
 		checkOutRecords.add(checkOutRecord);
-		
+
 		saveToStorage(StorageType.CHECKOUTRECORD, hmCheckOutRecord);
-		//saveToStorage(StorageType.CHECKOUTRECORD, checkOutRecords);
+		// saveToStorage(StorageType.CHECKOUTRECORD, checkOutRecords);
 	}
-	
 
 	static void saveToStorage(StorageType type, Object ob) {
 		ObjectOutputStream out = null;

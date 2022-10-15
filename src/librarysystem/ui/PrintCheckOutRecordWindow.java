@@ -34,7 +34,7 @@ public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 
 	JTextField txtMemberID;
 	JTable jt;
-	
+
 	public void checkOutBook() {
 		
 		setResizable(false);
@@ -104,14 +104,13 @@ public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 			String memberID = txtMemberID.getText().trim();
 
 			if (memberID.length() == 0) {
-				JOptionPane.showMessageDialog(this, "Member ID required", "Search Failed",
-						JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(this, "Member ID required", "Search Failed", JOptionPane.ERROR_MESSAGE);
 			} else {
-					try {
-						displayCheckoutInfo();
-					} catch (Exception e) {
-						JOptionPane.showMessageDialog(this, e.getMessage(), "Search Failed!", JOptionPane.ERROR_MESSAGE);
-					}
+				try {
+					displayCheckoutInfo();
+				} catch (Exception e) {
+					JOptionPane.showMessageDialog(this, e.getMessage(), "Search Failed!", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 	}
@@ -122,7 +121,7 @@ public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 			MainView.INSTANCE.setVisible(true);
 		});
 	}
-	
+
 	private void displayCheckoutInfo() {
 		CheckOutRecord cr = printCheckOutBookUseCase.getCheckOutRecord(txtMemberID.getText());
 		if (cr == null)
@@ -130,12 +129,11 @@ public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 
 		DefaultTableModel model2 = (DefaultTableModel) jt.getModel();
 		model2.setRowCount(0);
-			
+
 		for (CheckOutRecordEntry entry : cr.getCheckOutRecordEntries()) {
 			model2.addRow(new Object[] { cr.getMember().getMemberId(), cr.getMember().getFullName(),
-					entry.getBookCopy().getBook().getIsbn(),
-					entry.getBookCopy().getBook().getTitle(), entry.getCheckOutDate().toString(),
-					entry.getDueDate().toString() });
+					entry.getBookCopy().getBook().getIsbn(), entry.getBookCopy().getBook().getTitle(),
+					entry.getCheckOutDate().toString(), entry.getDueDate().toString() });
 
 		}
 
