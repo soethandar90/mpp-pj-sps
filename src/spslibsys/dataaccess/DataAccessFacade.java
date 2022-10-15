@@ -22,7 +22,7 @@ public class DataAccessFacade implements DataAccess {
 		BOOKS, MEMBERS, USERS, AUTHORS, CHECKOUTRECORD;
 	}
 
-	public static final String OUTPUT_DIR = System.getProperty("user.dir") + "/src/librarysystem/dataaccess/storage";
+	public static final String OUTPUT_DIR = System.getProperty("user.dir") + "/src/spslibsys/dataaccess/storage";
 	public static final String DATE_PATTERN = "MM/dd/yyyy";
 
 	@SuppressWarnings("unchecked")
