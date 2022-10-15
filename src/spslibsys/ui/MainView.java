@@ -173,7 +173,6 @@ public class MainView extends JFrame  implements LibWindow{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			LibrarySystem.hideAllWindows();
-			System.out.println("Hello");
 			AddMemberWindow.INSTANCE.init();
 			AddMemberWindow.INSTANCE.pack();
 			Util.centerFrameOnDesktop(AddMemberWindow.INSTANCE);
