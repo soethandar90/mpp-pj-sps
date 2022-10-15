@@ -24,7 +24,6 @@ public class ControllerFactory {
 		return useCase;
 	}
 
-	// Added by WinWin
 	public static GetAuthorUseCase createGetAuthorController() {
 		GetAuthorUseCase useCase = new GetAuthorController();
 		return useCase;

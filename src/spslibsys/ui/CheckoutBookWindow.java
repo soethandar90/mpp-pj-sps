@@ -125,7 +125,7 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
 		butn.addActionListener(evt -> {
 			String bkISBN = txtISBN.getText().trim();
 			String memberID = txtMemberID.getText().trim();
-
+			System.out.println(bkISBN + ":"+ memberID );
 			if (bkISBN.length() == 0 || memberID.length() == 0) {
 				JOptionPane.showMessageDialog(this, "ISBN and member ID required", "Checkout Failed",
 						JOptionPane.ERROR_MESSAGE);

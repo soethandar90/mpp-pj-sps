@@ -28,7 +28,6 @@ public class TestData {
 		td.libraryMemberData();
 		td.userData();
 
-		// Added by WinWin
 		td.authorData();
 
 		td.checkOutRecordData();
@@ -54,7 +53,6 @@ public class TestData {
 		DataAccessFacade.loadUserMap(allUsers);
 	}
 
-	// Added by WinWin
 	public void authorData() {
 		DataAccessFacade.loadAuthorMap(allAuthors);
 	}
@@ -77,7 +75,6 @@ public class TestData {
 		DataAccessFacade.loadCheckOutRecordMap(checkOutRecord);
 	}
 
-	// create library members
 	public void libraryMemberData() {
 		LibraryMember libraryMember = new LibraryMember("1001", "Andrew", "Smiths", "444-333-2211", addresses.get(4));
 		members.add(libraryMember);
@@ -109,7 +106,6 @@ public class TestData {
 		}
 	};
 
-	// Added authorId by WinWin
 	@SuppressWarnings("serial")
 	public List<Author> allAuthors = new ArrayList<Author>() {
 		{

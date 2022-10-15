@@ -24,7 +24,6 @@ public class Person implements Serializable {
 		return lastName;
 	}
 
-	// Added by WinWin
 	public String getFullName() {
 		return firstName + " " + lastName;
 	}

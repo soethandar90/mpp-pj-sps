@@ -8,13 +8,13 @@ import spslibsys.dom.CheckOutRecord;
 import spslibsys.dom.LibraryMember;
 
 public interface DataAccess {
-	public HashMap<String, Book> readBooksMap(); // Added by WinWin
+	public HashMap<String, Book> readBooksMap(); 
 
 	public HashMap<String, User> readUserMap();
 
 	public HashMap<String, LibraryMember> readMemberMap();
 
-	public HashMap<String, Author> readAuthorMap(); // Added by WinWin
+	public HashMap<String, Author> readAuthorMap(); 
 
 	public HashMap<String, CheckOutRecord> readCheckOutRecordsMap();
 
