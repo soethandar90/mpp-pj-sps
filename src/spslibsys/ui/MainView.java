@@ -107,7 +107,7 @@ public class MainView extends JFrame  implements LibWindow{
 		
 		lblGreeting = new JLabel("Dear User");
 		lblGreeting.setFont(new Font("Segoe UI", Font.ITALIC, 29));
-		lblGreeting.setBounds(214, 21, 213, 58);
+		lblGreeting.setBounds(214, 21, 270, 58);
 		panel.add(lblGreeting);
 		
 		
