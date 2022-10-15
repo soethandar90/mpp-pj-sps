@@ -17,9 +17,9 @@ import javax.swing.JTextField;
 
 import spslibsys.businessLogic.ifusecase.BookCopyUseCase;
 import spslibsys.businessLogic.implementation.ControllerFactory;
+import spslibsys.dom.Author;
+import spslibsys.dom.Book;
 import spslibsys.dom.exception.BookNotFoundException;
-import syslibsys.dom.Author;
-import syslibsys.dom.Book;
 
 public class BookCopyWindow extends JFrame implements LibWindow {
 

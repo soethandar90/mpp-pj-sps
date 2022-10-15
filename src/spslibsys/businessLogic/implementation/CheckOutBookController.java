@@ -9,14 +9,14 @@ import spslibsys.businessLogic.ifusecase.CheckOutBookUseCase;
 import spslibsys.businessLogic.ifusecase.SearchBookUseCase;
 import spslibsys.dataaccess.DataAccess;
 import spslibsys.dataaccess.DataAccessFacade;
+import spslibsys.dom.Book;
+import spslibsys.dom.BookCopy;
+import spslibsys.dom.CheckOutRecord;
+import spslibsys.dom.CheckOutRecordEntry;
+import spslibsys.dom.LibraryMember;
 import spslibsys.dom.exception.BookCopyNotAvailableException;
 import spslibsys.dom.exception.BookNotFoundException;
 import spslibsys.dom.exception.MemberNotFoundException;
-import syslibsys.dom.Book;
-import syslibsys.dom.BookCopy;
-import syslibsys.dom.CheckOutRecord;
-import syslibsys.dom.CheckOutRecordEntry;
-import syslibsys.dom.LibraryMember;
 
 public class CheckOutBookController implements CheckOutBookUseCase {
 

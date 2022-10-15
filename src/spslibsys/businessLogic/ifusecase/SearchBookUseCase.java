@@ -2,7 +2,7 @@ package spslibsys.businessLogic.ifusecase;
 
 import java.util.List;
 
-import syslibsys.dom.Book;
+import spslibsys.dom.Book;
 
 public interface SearchBookUseCase {
 	public Book searchBook(String isbn);

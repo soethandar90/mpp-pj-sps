@@ -2,10 +2,10 @@ package spslibsys.dataaccess;
 
 import java.util.HashMap;
 
-import syslibsys.dom.Author;
-import syslibsys.dom.Book;
-import syslibsys.dom.CheckOutRecord;
-import syslibsys.dom.LibraryMember;
+import spslibsys.dom.Author;
+import spslibsys.dom.Book;
+import spslibsys.dom.CheckOutRecord;
+import spslibsys.dom.LibraryMember;
 
 public interface DataAccess {
 	public HashMap<String, Book> readBooksMap(); // Added by WinWin

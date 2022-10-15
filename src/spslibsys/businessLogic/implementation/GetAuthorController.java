@@ -7,7 +7,7 @@ import java.util.List;
 import spslibsys.businessLogic.ifusecase.GetAuthorUseCase;
 import spslibsys.dataaccess.DataAccess;
 import spslibsys.dataaccess.DataAccessFacade;
-import syslibsys.dom.Author;
+import spslibsys.dom.Author;
 
 public class GetAuthorController implements GetAuthorUseCase {
 	GetAuthorController() {

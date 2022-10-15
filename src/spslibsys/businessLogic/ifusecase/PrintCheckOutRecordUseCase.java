@@ -1,6 +1,6 @@
 package spslibsys.businessLogic.ifusecase;
 
-import syslibsys.dom.CheckOutRecord;
+import spslibsys.dom.CheckOutRecord;
 
 public interface PrintCheckOutRecordUseCase {
 	public CheckOutRecord getCheckOutRecord(String memberId);

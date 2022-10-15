@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import syslibsys.dom.Address;
-import syslibsys.dom.Author;
-import syslibsys.dom.Book;
-import syslibsys.dom.CheckOutRecord;
-import syslibsys.dom.CheckOutRecordEntry;
-import syslibsys.dom.LibraryMember;
+import spslibsys.dom.Address;
+import spslibsys.dom.Author;
+import spslibsys.dom.Book;
+import spslibsys.dom.CheckOutRecord;
+import spslibsys.dom.CheckOutRecordEntry;
+import spslibsys.dom.LibraryMember;
 
 /**
  * This class loads data into the data repository and also sets up the storage

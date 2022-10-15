@@ -5,8 +5,8 @@ import java.util.HashMap;
 import spslibsys.businessLogic.ifusecase.BookCopyUseCase;
 import spslibsys.dataaccess.DataAccess;
 import spslibsys.dataaccess.DataAccessFacade;
+import spslibsys.dom.Book;
 import spslibsys.dom.exception.BookNotFoundException;
-import syslibsys.dom.Book;
 
 public class BookCopyController implements BookCopyUseCase {
 	BookCopyController() {

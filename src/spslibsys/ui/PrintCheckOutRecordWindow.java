@@ -18,8 +18,8 @@ import javax.swing.table.DefaultTableModel;
 
 import spslibsys.businessLogic.ifusecase.PrintCheckOutRecordUseCase;
 import spslibsys.businessLogic.implementation.ControllerFactory;
-import syslibsys.dom.CheckOutRecord;
-import syslibsys.dom.CheckOutRecordEntry;
+import spslibsys.dom.CheckOutRecord;
+import spslibsys.dom.CheckOutRecordEntry;
 
 public class PrintCheckOutRecordWindow extends JFrame implements LibWindow {
 

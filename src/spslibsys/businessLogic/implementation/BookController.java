@@ -8,7 +8,7 @@ import spslibsys.businessLogic.ifusecase.AddBookUseCase;
 import spslibsys.businessLogic.ifusecase.SearchBookUseCase;
 import spslibsys.dataaccess.DataAccess;
 import spslibsys.dataaccess.DataAccessFacade;
-import syslibsys.dom.Book;
+import spslibsys.dom.Book;
 
 public class BookController implements SearchBookUseCase, AddBookUseCase {
 

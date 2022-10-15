@@ -19,12 +19,12 @@ import javax.swing.table.DefaultTableModel;
 
 import spslibsys.businessLogic.ifusecase.CheckOutBookUseCase;
 import spslibsys.businessLogic.implementation.ControllerFactory;
+import spslibsys.dom.BookCopy;
+import spslibsys.dom.CheckOutRecord;
+import spslibsys.dom.CheckOutRecordEntry;
 import spslibsys.dom.exception.BookCopyNotAvailableException;
 import spslibsys.dom.exception.BookNotFoundException;
 import spslibsys.dom.exception.MemberNotFoundException;
-import syslibsys.dom.BookCopy;
-import syslibsys.dom.CheckOutRecord;
-import syslibsys.dom.CheckOutRecordEntry;
 
 public class CheckoutBookWindow extends JFrame implements LibWindow {
 

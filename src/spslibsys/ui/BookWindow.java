@@ -27,10 +27,10 @@ import spslibsys.businessLogic.ifusecase.AddBookUseCase;
 import spslibsys.businessLogic.ifusecase.GetAuthorUseCase;
 import spslibsys.businessLogic.ifusecase.SearchBookUseCase;
 import spslibsys.businessLogic.implementation.ControllerFactory;
+import spslibsys.dom.Author;
+import spslibsys.dom.Book;
+import spslibsys.dom.BookCopy;
 import spslibsys.utility.Util;
-import syslibsys.dom.Author;
-import syslibsys.dom.Book;
-import syslibsys.dom.BookCopy;
 
 public class BookWindow extends JFrame implements LibWindow {
 	public static final BookWindow INSTANCE = new BookWindow();

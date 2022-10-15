@@ -20,10 +20,10 @@ import javax.swing.JTextField;
 
 import spslibsys.businessLogic.ifusecase.AddLibraryMemberUseCase;
 import spslibsys.businessLogic.implementation.ControllerFactory;
+import spslibsys.dom.Address;
+import spslibsys.dom.LibraryMember;
 import spslibsys.dom.exception.InvalidMemberException;
 import spslibsys.utility.Util;
-import syslibsys.dom.Address;
-import syslibsys.dom.LibraryMember;
 
 public class AddMemberWindow extends JFrame implements LibWindow {
 	private static final long serialVersionUID = 1L;

@@ -6,8 +6,8 @@ import spslibsys.businessLogic.ifusecase.AddLibraryMemberUseCase;
 import spslibsys.businessLogic.ifusecase.CheckMemberUseCase;
 import spslibsys.dataaccess.DataAccess;
 import spslibsys.dataaccess.DataAccessFacade;
+import spslibsys.dom.LibraryMember;
 import spslibsys.dom.exception.InvalidMemberException;
-import syslibsys.dom.LibraryMember;
 
 public class LibraryMemberController implements AddLibraryMemberUseCase, CheckMemberUseCase {
 	LibraryMemberController() {

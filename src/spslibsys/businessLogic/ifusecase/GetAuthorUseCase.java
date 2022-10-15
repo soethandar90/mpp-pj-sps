@@ -2,7 +2,7 @@ package spslibsys.businessLogic.ifusecase;
 
 import java.util.List;
 
-import syslibsys.dom.Author;
+import spslibsys.dom.Author;
 
 public interface GetAuthorUseCase {
 
