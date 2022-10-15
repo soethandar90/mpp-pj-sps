@@ -1742,7 +1742,7 @@
 									"font": "Arial;13;0",
 									"left": 492.5,
 									"top": 183.5,
-									"width": 136.41357421875,
+									"width": 135,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGBsOljHMxwX94="
@@ -2476,7 +2476,7 @@
 									"font": "Arial;13;0",
 									"left": 519,
 									"top": 283.5,
-									"width": 111.12451171875,
+									"width": 111,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGBsOqobuBE79Q="
@@ -3613,7 +3613,7 @@
 									"font": "Arial;13;0",
 									"left": 550.5,
 									"top": 523.5,
-									"width": 107.49365234375,
+									"width": 107,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGBsPVYzmL/Jmk="
@@ -5091,7 +5091,7 @@
 									"font": "Arial;13;0",
 									"left": 567.5,
 									"top": 811.5,
-									"width": 150.8544921875,
+									"width": 150,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGBsPpsTSyxM8o="
@@ -12046,7 +12046,7 @@
 															"top": 47,
 															"width": 183.76708984375,
 															"height": 13,
-															"text": "logInWindow: LogInWindow"
+															"text": "logInWindow: MainLogin"
 														},
 														{
 															"_type": "LabelView",
@@ -13710,9 +13710,7 @@
 								"$ref": "AAAAAAGBuf39dUxB8Qk="
 							},
 							"name": "Role4",
-							"type": {
-								"$ref": "AAAAAAGBuf97R05uCBo="
-							}
+							"type": "MainLogin"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -25335,9 +25333,9 @@
 														"$ref": "AAAAAAGBuoVLOrnwiKc="
 													},
 													"font": "Arial;13;0",
-													"left": 56.72998046875,
+													"left": 54.55908203125,
 													"top": 5,
-													"width": 219.2197265625,
+													"width": 201.7001953125,
 													"height": 13,
 													"text": "AddLibraryMemberSequenceDiagram"
 												},
@@ -25350,7 +25348,7 @@
 													"font": "Arial;13;1",
 													"left": 37,
 													"top": 5,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -27180,9 +27178,9 @@
 														"$ref": "AAAAAAGBu7i98J0S1WA="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 30.55908203125,
 													"top": 13,
-													"width": 199.0087890625,
+													"width": 181.52099609375,
 													"height": 13,
 													"text": "AddBookCopy Sequence Diagram"
 												},
@@ -27195,7 +27193,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -28412,9 +28410,9 @@
 														"$ref": "AAAAAAGBvID/9mppvtk="
 													},
 													"font": "Arial;13;0",
-													"left": 24.72998046875,
+													"left": 22.55908203125,
 													"top": 13,
-													"width": 187.443359375,
+													"width": 171.396484375,
 													"height": 13,
 													"text": "AddNewBookSequenceDiagram"
 												},
@@ -28427,7 +28425,7 @@
 													"font": "Arial;13;1",
 													"left": 5,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
@@ -30661,9 +30659,9 @@
 														"$ref": "AAAAAAGBx5EaftheazE="
 													},
 													"font": "Arial;13;0",
-													"left": 32.72998046875,
+													"left": 30.55908203125,
 													"top": 13,
-													"width": 246.6796875,
+													"width": 221.9365234375,
 													"height": 13,
 													"text": "Print Checkout Record Sequence Diagram"
 												},
@@ -30676,7 +30674,7 @@
 													"font": "Arial;13;1",
 													"left": 13,
 													"top": 13,
-													"width": 14.72998046875,
+													"width": 12.55908203125,
 													"height": 13,
 													"text": "sd"
 												}
