@@ -257,7 +257,6 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		lowerPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
 		;
 		lowerPanel.add(backToMainButn);
-<<<<<<< HEAD
 		
 		JButton btnAddMember = new JButton("ADD");
 		attachAddMemberButtonListener(btnAddMember);
@@ -266,25 +265,12 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		JButton btnClear = new JButton("CANCEL");
 		btnClear.addActionListener(e -> { clearInput();});
 		lowerPanel.add(btnClear);
-		
-=======
-
-		JButton btnAddMember = new JButton("Add Member");
-		attachAddMemberButtonListener(btnAddMember);
-		lowerPanel.add(btnAddMember);
-
-		JButton btnClear = new JButton("Cancel");
-		btnClear.addActionListener(e -> {
-			clearInput();
-		});
-		lowerPanel.add(btnClear);
 
 //		JPanel addBookButtonPanel = new JPanel();
 //		addBookButtonPanel.setLayout(new FlowLayout(1));
 //		addBookButtonPanel.add(btnAddMember);
 		// this.outerMiddel.add(addBookButtonPanel, BorderLayout.CENTER);
 
->>>>>>> main
 	}
 
 	class BackToMainListener implements ActionListener {
