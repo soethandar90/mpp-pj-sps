@@ -1,13 +1,16 @@
 package librarysystem.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -66,8 +69,21 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		this.mainPanel.add(this.topPanel, BorderLayout.NORTH);
 		this.mainPanel.add(this.outerMiddel, BorderLayout.CENTER);
 		this.mainPanel.add(this.lowerPanel, BorderLayout.SOUTH);
+		
+		this.mainPanel.setBackground(new Color(244, 244, 244,180));
+		this.mainPanel.setBounds(40, 55, 800, 500);
 		getContentPane().add(mainPanel);
 		isInitialized = true;
+		
+		
+//		this.mainPanel.setBounds(EXIT_ON_CLOSE, ABORT, WIDTH, HEIGHT);
+//		this.mainPanel.setBounds(40, 55, 800, 500);
+//		getContentPane().add(this.mainPanel);
+		
+//		JLabel lblNewLabel = new JLabel("");
+//		lblNewLabel.setBounds(0, 0, 920, 633);
+//		lblNewLabel.setIcon(new ImageIcon(new javax.swing.ImageIcon(MainLogin.class.getResource("/librarysystem/library.png")).getImage().getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH)));
+//		getContentPane().add(lblNewLabel);
 		
 	}
 
@@ -103,8 +119,9 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 	
 	public void defineTopPanel() {
 		this.topPanel = new JPanel();
+		
 		JLabel addMemberLabel = new JLabel("Add Library Member");
-		Util.adjustLabelFont(addMemberLabel, Util.DARK_BLUE, true);
+		Util.adjustLabelFont(addMemberLabel, Color.BLACK, true);
 		this.topPanel.setLayout(new FlowLayout(0));
 		this.topPanel.add(addMemberLabel);
 	}
@@ -234,24 +251,19 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 	}
 	
 	public void defineLowerPanel() {
-		JButton backToMainButn = new JButton("<= Back to Main");
+		JButton backToMainButn = new JButton("HOME");
 		backToMainButn.addActionListener(new BackToMainListener());
 		lowerPanel = new JPanel();
 		lowerPanel.setLayout(new FlowLayout(FlowLayout.LEFT));;
 		lowerPanel.add(backToMainButn);
 		
-		JButton btnAddMember = new JButton("Add Member");
+		JButton btnAddMember = new JButton("ADD");
 		attachAddMemberButtonListener(btnAddMember);
 		lowerPanel.add(btnAddMember);
 		
-		JButton btnClear = new JButton("Cancel");
+		JButton btnClear = new JButton("CANCEL");
 		btnClear.addActionListener(e -> { clearInput();});
 		lowerPanel.add(btnClear);
-		
-//		JPanel addBookButtonPanel = new JPanel();
-//		addBookButtonPanel.setLayout(new FlowLayout(1));
-//		addBookButtonPanel.add(btnAddMember);
-		//this.outerMiddel.add(addBookButtonPanel, BorderLayout.CENTER);
 		
 	}
 	
@@ -259,7 +271,7 @@ public class AddMemberWindow extends JFrame implements LibWindow {
 		@Override
 		public void actionPerformed(ActionEvent evt) {
 			LibrarySystem.hideAllWindows();
-			LibrarySystem.INSTANCE.setVisible(true);
+			MainView.INSTANCE.setVisible(true);
 		}
 	}
 	

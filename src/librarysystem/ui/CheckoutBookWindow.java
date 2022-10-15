@@ -3,7 +3,9 @@ package librarysystem.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -45,7 +47,11 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
 
     public void checkOutBook() {
         // TODO Auto-generated method stub
-
+    	setResizable(false);
+		setTitle("Library System");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 930, 657);
+		
         JPanel panelCheckoutFields = new JPanel();
         panelCheckoutFields.setLayout(null);
         panelCheckoutFields.setSize(500,500);
@@ -68,13 +74,13 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
         btnCheckout.setBounds(110, 80, 100, 20);
         addCheckoutListener(btnCheckout);
 
-        JButton btnBackToMain = new JButton("Back to Main");
+        JButton btnBackToMain = new JButton("HOME");
         addBackButtonListener(btnBackToMain);
 
         JPanel pnlButtonSave = new JPanel();
         pnlButtonSave.add(btnBackToMain);
         pnlButtonSave.setBounds(20, 150, 800, 35);
-        pnlButtonSave.setBackground(Color.white);
+        pnlButtonSave.setBackground(new Color(244, 244, 244,0));
 
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Member Id");
@@ -99,10 +105,19 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
         panelCheckoutFields.add(btnCheckout);
         panelCheckoutFields.add(pnlButtonSave, BorderLayout.CENTER);
 
-        this.setSize(450, 450);
-        this.setVisible(true);
-        this.setResizable(true);
-        this.add(panelCheckoutFields);
+        
+        panelCheckoutFields.setBackground(new Color(244, 244, 244,180));
+//		this.mainPanel.setBounds(EXIT_ON_CLOSE, ABORT, WIDTH, HEIGHT);
+        panelCheckoutFields.setBounds(40, 49, 850, 600);
+		
+//		this.add(panelCheckoutFields);
+        
+		getContentPane().add(panelCheckoutFields);
+        
+    	JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(0, 0, 920, 633);
+		lblNewLabel.setIcon(new ImageIcon(new javax.swing.ImageIcon(MainLogin.class.getResource("/librarysystem/library.png")).getImage().getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH)));
+		getContentPane().add(lblNewLabel);
 
     }
 
@@ -129,7 +144,7 @@ public class CheckoutBookWindow extends JFrame implements LibWindow {
     private void addBackButtonListener(JButton butn) {
         butn.addActionListener(evt -> {
             LibrarySystem.hideAllWindows();
-            LibrarySystem.INSTANCE.setVisible(true);
+            MainView.INSTANCE.setVisible(true);
         });
     }
 

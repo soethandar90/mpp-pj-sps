@@ -2,9 +2,12 @@ package librarysystem.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -31,6 +34,11 @@ public class BookCopyWindow extends JFrame implements LibWindow {
     private JTextField txtISBN, txtCopyNumber;
 
     public void initComponent() {
+    	setResizable(false);
+		setTitle("Library System");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 930, 657);
+		
         JPanel panelCreateCopyField = new JPanel();
         panelCreateCopyField.setLayout(null);
         JLabel lblISBN = new JLabel("ISBN:");
@@ -50,13 +58,12 @@ public class BookCopyWindow extends JFrame implements LibWindow {
         JButton btnSave = new JButton("Save");
         addCreateCopyButtonListener(btnSave) ;
 
-        JButton btnBacktoMain = new JButton("<< Back to Main");
+        JButton btnBacktoMain = new JButton("HOME");
         addBackButtonListener(btnBacktoMain);
 
         pnlButtonSave.add(btnBacktoMain);
         pnlButtonSave.add(btnSave);
-        pnlButtonSave.setBounds(20, 100, 360, 35);
-        pnlButtonSave.setBackground(Color.white);
+        pnlButtonSave.setBounds(244, 244, 244,40);
 
         panelCreateCopyField.add(lblISBN);
         panelCreateCopyField.add(txtISBN);
@@ -65,18 +72,22 @@ public class BookCopyWindow extends JFrame implements LibWindow {
         panelCreateCopyField.add(txtCopyNumber);
 
         panelCreateCopyField.add(pnlButtonSave, BorderLayout.CENTER);
+		panelCreateCopyField.setBackground(new Color(244, 244, 244,225));
+		panelCreateCopyField.setBounds(103, 99, 690, 400);
+//		mainPanel.add(panelCreateCopyField);
 
         getContentPane().add(panelCreateCopyField);
-
-         this.setTitle("Create Book Copy");
-         this.setMinimumSize(new Dimension(400, 400));
-         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         
+        JLabel lblNewLabel = new JLabel("");
+ 		lblNewLabel.setBounds(0, 0, 920, 633);
+ 		lblNewLabel.setIcon(new ImageIcon(new javax.swing.ImageIcon(MainLogin.class.getResource("/librarysystem/library.png")).getImage().getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH)));
+ 		getContentPane().add(lblNewLabel);
     }
 
     private void addBackButtonListener(JButton butn) {
         butn.addActionListener(evt -> {
             LibrarySystem.hideAllWindows();
-            LibrarySystem.INSTANCE.setVisible(true);
+            MainView.INSTANCE.setVisible(true);
         });
     }
 

@@ -1,13 +1,16 @@
 package librarysystem.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -52,14 +55,28 @@ public class BookWindow extends JFrame implements LibWindow {
 
 	@Override
 	public void init() {
+		setResizable(false);
+		setTitle("Library System");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 930, 657);
+		
 		mainPanel = new JPanel();
 		mainPanel.setLayout(new BorderLayout());
 		defineTopPanel();
 		defineOuterMiddle();
 		mainPanel.add(this.topPanel, BorderLayout.NORTH);
 		mainPanel.add(this.outerMiddle, BorderLayout.CENTER);
+		
+		mainPanel.setBackground(new Color(244, 244, 244,140));
+		mainPanel.setBounds(60, 20, 800, 720);
 
-		getContentPane().add(mainPanel);
+        getContentPane().add(mainPanel);
+         
+        JLabel lblNewLabel = new JLabel("");
+ 		lblNewLabel.setBounds(0, 0, 920, 633);
+ 		lblNewLabel.setIcon(new ImageIcon(new javax.swing.ImageIcon(MainLogin.class.getResource("/librarysystem/library.png")).getImage().getScaledInstance(lblNewLabel.getWidth(), lblNewLabel.getHeight(), Image.SCALE_SMOOTH)));
+ 		getContentPane().add(lblNewLabel);
+		
 		isInitialized(true);
 		m_authors = getAllAuthors();
 	}
@@ -126,7 +143,7 @@ public class BookWindow extends JFrame implements LibWindow {
 	public void defineTopPanel() {
 		this.topPanel = new JPanel();
 		JLabel AddBookLabel = new JLabel("Add New Book");
-		Util.adjustLabelFont(AddBookLabel, Util.DARK_BLUE, true);
+		Util.adjustLabelFont(AddBookLabel, Color.BLACK, true);
 		this.topPanel.setLayout(new FlowLayout(0));
 		this.topPanel.add(AddBookLabel);
 	}
@@ -196,10 +213,10 @@ public class BookWindow extends JFrame implements LibWindow {
 		this.outerMiddle.add(middlePanel, "North");
 
 		// Buttons
-		JButton btnBackToMain = new JButton("<< Back to Main");
+		JButton btnBackToMain = new JButton("HOME");
 		addBackButtonListener(btnBackToMain);
 
-		JButton btnAddBook = new JButton("Add Book");
+		JButton btnAddBook = new JButton("ADD");
 		attachAddBookButtonListener(btnAddBook);
 
 		JPanel buttonPanel = new JPanel();
@@ -209,15 +226,13 @@ public class BookWindow extends JFrame implements LibWindow {
 		this.outerMiddle.add(buttonPanel, "Center");
 		jScrollPane = initializeTable();
 
-		
-
 		this.outerMiddle.add(jScrollPane, "South");
 	}
 
 	private void addBackButtonListener(JButton butn) {
 		butn.addActionListener(evt -> {
 			LibrarySystem.hideAllWindows();
-			LibrarySystem.INSTANCE.setVisible(true);
+			MainView.INSTANCE.setVisible(true);
 		});
 	}
 
